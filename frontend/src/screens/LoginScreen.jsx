@@ -38,6 +38,7 @@ const LoginScreen = ({ location, history }) => {
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type="email"
+            value={email}
             placeholder="Enter email"
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
@@ -46,6 +47,7 @@ const LoginScreen = ({ location, history }) => {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
+            value={password}
             placeholder="Enter password"
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
