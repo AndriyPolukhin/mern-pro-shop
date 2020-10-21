@@ -31,6 +31,10 @@ const CartScreen = ({ match, location, history }) => {
     dispatch(removeFromCart(id));
   };
 
+  const addToCartHandler = (id, qty) => {
+    dispatch(addToCart(id, qty));
+  };
+
   const checkOutHandler = () => {
     history.push('/login?redirect=shipping');
   };
@@ -60,9 +64,7 @@ const CartScreen = ({ match, location, history }) => {
                       as="select"
                       value={item.qty}
                       onChange={(e) =>
-                        dispatch(
-                          addToCart(item.product, Number(e.target.value))
-                        )
+                        addToCartHandler(item.product, Number(e.target.value))
                       }
                     >
                       {[...Array(item.countInStock).keys()].map((x) => (
