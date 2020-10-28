@@ -15,8 +15,6 @@ const OrderListScreen = ({ history }) => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  const user = { email: 'at@at.com', isAdmin: true };
-
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listOrders());
